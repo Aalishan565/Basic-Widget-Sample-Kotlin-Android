@@ -5,16 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     companion object {
-        val Tag: String = "MainActivity"
+        val TAG: String = "MainActivity"
     }
 
     /*private lateinit var etMessage: EditText
@@ -35,7 +31,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         btnSubmit.setOnClickListener(this)
         btnNavigate.setOnClickListener(this)
-        
+
 
         /*btnSubmit.setOnClickListener(View.OnClickListener(fun(it: View) {
             name = etMessage.text.toString();
@@ -52,7 +48,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         when (view) {
             btnSubmit -> {
-                Log.d(Tag, "Submit button clicked")
+                Log.d(TAG, "Submit button clicked")
                 name = etMessage.text.toString();
                 //tvMessage.setText(name)
                 tvMessage.text = name
@@ -60,7 +56,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 showToast(name)
             }
             btnNavigate -> {
-                Log.d(Tag, "Navigate button clicked")
+                Log.d(TAG, "Navigate button clicked")
                 val intent = Intent(this@MainActivity, SecondActivity::class.java)
                 name = tvMessage.text.toString()
                 intent.putExtra(Constants.key_name, name)
